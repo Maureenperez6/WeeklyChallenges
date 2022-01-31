@@ -18,6 +18,7 @@ namespace ChallengesWithTestsMark8
             {
                 return false;
             }
+            //return (num1 == num2) ? true : false;       --->      terinary way
         }
 
         public double Subtract(double minuend, double subtrahend)
