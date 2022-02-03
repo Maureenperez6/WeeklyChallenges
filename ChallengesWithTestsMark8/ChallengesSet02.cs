@@ -10,7 +10,7 @@ namespace ChallengesWithTestsMark8
         {
             var letter = (char.IsLetter(c));
             return letter;
-
+            // return char.IsLetter(c);            -----> faster way to do it.
         }
 
         public bool CountOfElementsIsEven(string[] vals)
@@ -20,7 +20,11 @@ namespace ChallengesWithTestsMark8
             else
                 return false;
 
-        }
+            // ternary Version :
+          // return (vals.Length % 2 == 0) ? true: false;        ------> faster way to do it.
+         // return (vals.Length % 2 ==0);         ------> another way to do it, can use this way because the return type is a Boolean.
+
+        } 
 
         public bool IsNumberEven(int number)
         {
@@ -30,6 +34,8 @@ namespace ChallengesWithTestsMark8
             
             else 
                 return false;
+
+            // return (number % 2 == 0);       ------> faster way to do it. Returns true or false anyways.  ***FOR EVENS!!!!****
                     
 
         }
@@ -42,6 +48,8 @@ namespace ChallengesWithTestsMark8
                 return true;
             else
                 return false;
+
+            // return ( num % 2 != 0);       ------> ***** FOR ODDS *****
         }
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
@@ -55,11 +63,22 @@ namespace ChallengesWithTestsMark8
             var minMax = number + num;
             return minMax;
 
+            // LINQ way .... add using system Linq to top to be able to use Linq.
+            // if (numbers == null || numbers.Count() == 0)         ---->  this is how to null check
+            //{
+            // return 0;
+           // }
+            // return numbers.Min() + numbers.Max();
+
+    
+            //TERNARY WAY
+            // return (numbers == null || numbers.Count() == 0) ? 0 : numbers.Min() + numbers.Max();
+
         }
 
         public int GetLengthOfShortestString(string str1, string str2)
         {
-            if(str1.Length < str2.Length)
+            if (str1.Length < str2.Length)
             {
                 return str1.Length;
             }
@@ -67,7 +86,7 @@ namespace ChallengesWithTestsMark8
             {
                 return str2.Length;
             }
-        
+
         }
 
         public int Sum(int[] numbers)
@@ -77,6 +96,17 @@ namespace ChallengesWithTestsMark8
             }
 
             return numbers.Sum();
+
+            //if (numbers == null)
+           // {
+             //return 0;
+          // }
+            //var sum = 0;
+           //for ( int i = 0; i < numbers.Length; i++)
+           //{
+              //sum += numbers[i];
+           //}
+             // return sum;
            
         }
 
@@ -87,6 +117,20 @@ namespace ChallengesWithTestsMark8
                 return 0;
             }
             return numbers.Where(number => number % 2 == 0).Sum();
+
+            //if (numbers == null)
+            //{
+            // return 0;
+            //}
+            //var evenSum = o;
+            //for (int i = 0; i < numbers.Legth; i++)
+            //{
+              //if (numbers[i] % 2 ==0)
+             //{
+               //evenSum += numbers[i];
+             //}
+           //}
+              // return evenSum;
            
         }
 
@@ -97,6 +141,7 @@ namespace ChallengesWithTestsMark8
                 return false;
             }
             return numbers.Sum() % 2 != 0;
+ 
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
