@@ -71,11 +71,18 @@ namespace ChallengesWithTestsMark8
         public char GetFirstLetterOfString(string val)
         {
             return val[0]; 
+
+            //LINQ way
+            // return val.First();
         }
 
         public char GetLastLetterOfString(string val)
         {
             return val[val.Length - 1];
+
+
+            //LINQ way
+            // return val.Last();
         }
 
         public decimal Divide(decimal dividend, decimal divisor)
